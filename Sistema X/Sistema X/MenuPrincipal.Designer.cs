@@ -30,7 +30,6 @@ namespace Sistema_X
         private void InitializeComponent()
         {
             this.gbBotnes = new System.Windows.Forms.GroupBox();
-            this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnSucursales = new System.Windows.Forms.Button();
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
@@ -40,6 +39,10 @@ namespace Sistema_X
             this.dgvVenta = new System.Windows.Forms.DataGridView();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
+            this.lblSucursal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.gbBotnes.SuspendLayout();
             this.gbVenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
@@ -47,42 +50,33 @@ namespace Sistema_X
             // 
             // gbBotnes
             // 
-            this.gbBotnes.Controls.Add(this.btnUsuarios);
             this.gbBotnes.Controls.Add(this.btnSucursales);
             this.gbBotnes.Controls.Add(this.btnReporte);
             this.gbBotnes.Controls.Add(this.btnInventario);
-            this.gbBotnes.Location = new System.Drawing.Point(70, 34);
+            this.gbBotnes.Location = new System.Drawing.Point(70, 38);
             this.gbBotnes.Name = "gbBotnes";
             this.gbBotnes.Size = new System.Drawing.Size(944, 103);
             this.gbBotnes.TabIndex = 3;
             this.gbBotnes.TabStop = false;
             this.gbBotnes.Text = "Menu";
             // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.Location = new System.Drawing.Point(516, 44);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(75, 23);
-            this.btnUsuarios.TabIndex = 3;
-            this.btnUsuarios.Text = "Usuarios";
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            // 
             // btnSucursales
             // 
-            this.btnSucursales.Location = new System.Drawing.Point(345, 44);
+            this.btnSucursales.Location = new System.Drawing.Point(225, 44);
             this.btnSucursales.Name = "btnSucursales";
             this.btnSucursales.Size = new System.Drawing.Size(75, 23);
             this.btnSucursales.TabIndex = 2;
             this.btnSucursales.Text = "Sucursales";
             this.btnSucursales.UseVisualStyleBackColor = true;
+            this.btnSucursales.Click += new System.EventHandler(this.btnSucursales_Click);
             // 
             // btnReporte
             // 
-            this.btnReporte.Location = new System.Drawing.Point(185, 44);
+            this.btnReporte.Location = new System.Drawing.Point(413, 44);
             this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(75, 23);
+            this.btnReporte.Size = new System.Drawing.Size(108, 23);
             this.btnReporte.TabIndex = 1;
-            this.btnReporte.Text = "Reporte";
+            this.btnReporte.Text = "Detalle Ventas";
             this.btnReporte.UseVisualStyleBackColor = true;
             // 
             // btnInventario
@@ -93,6 +87,7 @@ namespace Sistema_X
             this.btnInventario.TabIndex = 0;
             this.btnInventario.Text = "Inventario";
             this.btnInventario.UseVisualStyleBackColor = true;
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
             // gbVenta
             // 
@@ -150,11 +145,51 @@ namespace Sistema_X
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Codigo";
             // 
+            // lblSucursal
+            // 
+            this.lblSucursal.AutoSize = true;
+            this.lblSucursal.Location = new System.Drawing.Point(729, 9);
+            this.lblSucursal.Name = "lblSucursal";
+            this.lblSucursal.Size = new System.Drawing.Size(32, 13);
+            this.lblSucursal.TabIndex = 4;
+            this.lblSucursal.Text = "/////";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(220, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Usuario:";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(292, 9);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(52, 13);
+            this.lblUsuario.TabIndex = 6;
+            this.lblUsuario.Text = "/////////";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(636, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Sucursal:";
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1085, 620);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblUsuario);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSucursal);
             this.Controls.Add(this.gbBotnes);
             this.Controls.Add(this.gbVenta);
             this.Name = "MenuPrincipal";
@@ -164,13 +199,13 @@ namespace Sistema_X
             this.gbVenta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.GroupBox gbBotnes;
-        private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Button btnSucursales;
         private System.Windows.Forms.Button btnReporte;
         private System.Windows.Forms.Button btnInventario;
@@ -180,5 +215,9 @@ namespace Sistema_X
         private System.Windows.Forms.DataGridView dgvVenta;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.Label lblSucursal;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label label3;
     }
 }

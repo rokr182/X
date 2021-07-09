@@ -30,7 +30,6 @@ namespace Sistema_X
         private void InitializeComponent()
         {
             this.gbSucursal = new System.Windows.Forms.GroupBox();
-            this.btnEntrar2 = new System.Windows.Forms.Button();
             this.cbSucursales = new System.Windows.Forms.ComboBox();
             this.lblSucursal = new System.Windows.Forms.Label();
             this.btnEntrar = new System.Windows.Forms.Button();
@@ -43,29 +42,23 @@ namespace Sistema_X
             // 
             // gbSucursal
             // 
-            this.gbSucursal.Controls.Add(this.btnEntrar2);
+            this.gbSucursal.Controls.Add(this.btnEntrar);
+            this.gbSucursal.Controls.Add(this.lblPassword);
             this.gbSucursal.Controls.Add(this.cbSucursales);
+            this.gbSucursal.Controls.Add(this.lblUsuario);
             this.gbSucursal.Controls.Add(this.lblSucursal);
-            this.gbSucursal.Location = new System.Drawing.Point(145, 240);
+            this.gbSucursal.Controls.Add(this.txtPass);
+            this.gbSucursal.Controls.Add(this.txtUsuario);
+            this.gbSucursal.Location = new System.Drawing.Point(12, 12);
             this.gbSucursal.Name = "gbSucursal";
-            this.gbSucursal.Size = new System.Drawing.Size(185, 208);
+            this.gbSucursal.Size = new System.Drawing.Size(185, 352);
             this.gbSucursal.TabIndex = 13;
             this.gbSucursal.TabStop = false;
-            this.gbSucursal.Visible = false;
-            // 
-            // btnEntrar2
-            // 
-            this.btnEntrar2.Location = new System.Drawing.Point(39, 144);
-            this.btnEntrar2.Name = "btnEntrar2";
-            this.btnEntrar2.Size = new System.Drawing.Size(100, 23);
-            this.btnEntrar2.TabIndex = 8;
-            this.btnEntrar2.Text = "Entrar";
-            this.btnEntrar2.UseVisualStyleBackColor = true;
             // 
             // cbSucursales
             // 
             this.cbSucursales.FormattingEnabled = true;
-            this.cbSucursales.Location = new System.Drawing.Point(39, 67);
+            this.cbSucursales.Location = new System.Drawing.Point(36, 182);
             this.cbSucursales.Name = "cbSucursales";
             this.cbSucursales.Size = new System.Drawing.Size(100, 21);
             this.cbSucursales.TabIndex = 4;
@@ -73,7 +66,7 @@ namespace Sistema_X
             // lblSucursal
             // 
             this.lblSucursal.AutoSize = true;
-            this.lblSucursal.Location = new System.Drawing.Point(43, 51);
+            this.lblSucursal.Location = new System.Drawing.Point(40, 166);
             this.lblSucursal.Name = "lblSucursal";
             this.lblSucursal.Size = new System.Drawing.Size(48, 13);
             this.lblSucursal.TabIndex = 5;
@@ -81,17 +74,18 @@ namespace Sistema_X
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Location = new System.Drawing.Point(188, 211);
+            this.btnEntrar.Location = new System.Drawing.Point(36, 244);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(100, 23);
             this.btnEntrar.TabIndex = 12;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(185, 141);
+            this.lblPassword.Location = new System.Drawing.Point(33, 97);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(61, 13);
             this.lblPassword.TabIndex = 11;
@@ -100,7 +94,7 @@ namespace Sistema_X
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(185, 78);
+            this.lblUsuario.Location = new System.Drawing.Point(33, 34);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 10;
@@ -108,14 +102,14 @@ namespace Sistema_X
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(188, 167);
+            this.txtPass.Location = new System.Drawing.Point(36, 123);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(100, 20);
             this.txtPass.TabIndex = 9;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(188, 107);
+            this.txtUsuario.Location = new System.Drawing.Point(36, 63);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 8;
@@ -124,27 +118,19 @@ namespace Sistema_X
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 527);
+            this.ClientSize = new System.Drawing.Size(204, 374);
             this.Controls.Add(this.gbSucursal);
-            this.Controls.Add(this.btnEntrar);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.txtUsuario);
             this.Name = "Login";
             this.Text = "Login";
-
             this.gbSucursal.ResumeLayout(false);
             this.gbSucursal.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.GroupBox gbSucursal;
-        private System.Windows.Forms.Button btnEntrar2;
         private System.Windows.Forms.ComboBox cbSucursales;
         private System.Windows.Forms.Label lblSucursal;
         private System.Windows.Forms.Button btnEntrar;

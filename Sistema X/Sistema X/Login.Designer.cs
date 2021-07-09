@@ -46,7 +46,7 @@ namespace Sistema_X
             this.gbSucursal.Controls.Add(this.btnEntrar2);
             this.gbSucursal.Controls.Add(this.cbSucursales);
             this.gbSucursal.Controls.Add(this.lblSucursal);
-            this.gbSucursal.Location = new System.Drawing.Point(152, 240);
+            this.gbSucursal.Location = new System.Drawing.Point(145, 240);
             this.gbSucursal.Name = "gbSucursal";
             this.gbSucursal.Size = new System.Drawing.Size(185, 208);
             this.gbSucursal.TabIndex = 13;
@@ -133,6 +133,7 @@ namespace Sistema_X
             this.Controls.Add(this.txtUsuario);
             this.Name = "Login";
             this.Text = "Login";
+
             this.gbSucursal.ResumeLayout(false);
             this.gbSucursal.PerformLayout();
             this.ResumeLayout(false);

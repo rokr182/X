@@ -30,5 +30,63 @@ namespace Sistema_X
             Sucursales suc = new Sucursales();
             suc.Show();
         }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Modelo.Inventario prodcuto = null;
+            int codigo;
+            int index = -1;
+            int cantidad = 1;
+            int cantidaddgv = 0;
+            if (Convert.ToInt32(e.KeyChar) == 13)
+            {
+                //MessageBox.Show(" Enter pressed ");
+                codigo = Convert.ToInt32(txtCodigo.Text);
+                Controlador.Controlador ctrl = new Controlador.Controlador();
+                prodcuto = ctrl.datosProducto(codigo);
+                if(prodcuto != null)
+                {
+                    if (agregado(codigo, index))
+                    {
+                        txtCodigo.Text = "";
+                        txtCodigo.Focus();
+                    }
+                    else 
+                    {
+                        dgvVenta.Rows.Add(codigo, prodcuto.producto.nombreProducto, cantidad, prodcuto.producto.precio);
+                        txtCodigo.Text = "";
+                        txtCodigo.Focus();
+                    }
+                    
+                }
+            }
+        }
+
+
+        public bool agregado(int codigo, int index)
+        {
+            bool ok = false;
+
+            for (int i = 0; i < dgvVenta.Rows.Count; i++)
+            {
+                index = i;
+                if(Convert.ToInt32(dgvVenta.Rows[index].Cells[0].Value.ToString()) == codigo)
+                {
+                    dgvVenta.Rows[index].Cells[2].Value = Convert.ToInt32(dgvVenta.Rows[index].Cells[2].Value.ToString()) + 1;
+                    ok = true;
+                    break;
+                }
+
+            }
+            return ok;
+
+        }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
+
+
 }

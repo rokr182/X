@@ -30,11 +30,11 @@ namespace Sistema_X
         private void InitializeComponent()
         {
             this.gbSucursal = new System.Windows.Forms.GroupBox();
-            this.cbSucursales = new System.Windows.Forms.ComboBox();
-            this.lblSucursal = new System.Windows.Forms.Label();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.lblPassword = new System.Windows.Forms.Label();
+            this.cbSucursales = new System.Windows.Forms.ComboBox();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblSucursal = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.gbSucursal.SuspendLayout();
@@ -55,29 +55,12 @@ namespace Sistema_X
             this.gbSucursal.TabIndex = 13;
             this.gbSucursal.TabStop = false;
             // 
-            // cbSucursales
-            // 
-            this.cbSucursales.FormattingEnabled = true;
-            this.cbSucursales.Location = new System.Drawing.Point(36, 182);
-            this.cbSucursales.Name = "cbSucursales";
-            this.cbSucursales.Size = new System.Drawing.Size(100, 21);
-            this.cbSucursales.TabIndex = 4;
-            // 
-            // lblSucursal
-            // 
-            this.lblSucursal.AutoSize = true;
-            this.lblSucursal.Location = new System.Drawing.Point(40, 166);
-            this.lblSucursal.Name = "lblSucursal";
-            this.lblSucursal.Size = new System.Drawing.Size(48, 13);
-            this.lblSucursal.TabIndex = 5;
-            this.lblSucursal.Text = "Sucursal";
-            // 
             // btnEntrar
             // 
             this.btnEntrar.Location = new System.Drawing.Point(36, 244);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(100, 23);
-            this.btnEntrar.TabIndex = 12;
+            this.btnEntrar.TabIndex = 4;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
@@ -91,6 +74,14 @@ namespace Sistema_X
             this.lblPassword.TabIndex = 11;
             this.lblPassword.Text = "Contraseña";
             // 
+            // cbSucursales
+            // 
+            this.cbSucursales.FormattingEnabled = true;
+            this.cbSucursales.Location = new System.Drawing.Point(36, 182);
+            this.cbSucursales.Name = "cbSucursales";
+            this.cbSucursales.Size = new System.Drawing.Size(100, 21);
+            this.cbSucursales.TabIndex = 3;
+            // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
@@ -100,19 +91,29 @@ namespace Sistema_X
             this.lblUsuario.TabIndex = 10;
             this.lblUsuario.Text = "Usuario";
             // 
+            // lblSucursal
+            // 
+            this.lblSucursal.AutoSize = true;
+            this.lblSucursal.Location = new System.Drawing.Point(40, 166);
+            this.lblSucursal.Name = "lblSucursal";
+            this.lblSucursal.Size = new System.Drawing.Size(48, 13);
+            this.lblSucursal.TabIndex = 5;
+            this.lblSucursal.Text = "Sucursal";
+            // 
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(36, 123);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(100, 20);
-            this.txtPass.TabIndex = 9;
+            this.txtPass.TabIndex = 2;
+            this.txtPass.UseSystemPasswordChar = true;
             // 
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(36, 63);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
-            this.txtUsuario.TabIndex = 8;
+            this.txtUsuario.TabIndex = 1;
             // 
             // Login
             // 
@@ -121,6 +122,7 @@ namespace Sistema_X
             this.ClientSize = new System.Drawing.Size(204, 374);
             this.Controls.Add(this.gbSucursal);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.gbSucursal.ResumeLayout(false);
             this.gbSucursal.PerformLayout();

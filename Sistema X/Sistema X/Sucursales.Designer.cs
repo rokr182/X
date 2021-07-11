@@ -30,10 +30,10 @@ namespace Sistema_X
         private void InitializeComponent()
         {
             this.dgvSucursales = new System.Windows.Forms.DataGridView();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.idSucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreSucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DireccionSucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNuevo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursales)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,16 +53,6 @@ namespace Sistema_X
             this.dgvSucursales.TabIndex = 0;
             this.dgvSucursales.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSucursales_CellDoubleClick);
             // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Location = new System.Drawing.Point(39, 28);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevo.TabIndex = 1;
-            this.btnNuevo.Text = "Agregar Sucursal";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
             // idSucursal
             // 
             this.idSucursal.HeaderText = "idSucursal";
@@ -81,6 +71,16 @@ namespace Sistema_X
             this.DireccionSucursal.Name = "DireccionSucursal";
             this.DireccionSucursal.ReadOnly = true;
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(39, 28);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.Text = "Agregar Sucursal";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
             // Sucursales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -89,6 +89,7 @@ namespace Sistema_X
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.dgvSucursales);
             this.Name = "Sucursales";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sucursales";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSucursales)).EndInit();
             this.ResumeLayout(false);

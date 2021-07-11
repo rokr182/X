@@ -31,10 +31,8 @@ namespace Sistema_X
         {
             this.gbBotnes = new System.Windows.Forms.GroupBox();
             this.btnSucursales = new System.Windows.Forms.Button();
-            this.btnReporte = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
             this.gbVenta = new System.Windows.Forms.GroupBox();
-            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnVenta = new System.Windows.Forms.Button();
             this.dgvVenta = new System.Windows.Forms.DataGridView();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -43,6 +41,10 @@ namespace Sistema_X
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbBotnes.SuspendLayout();
             this.gbVenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
@@ -51,18 +53,17 @@ namespace Sistema_X
             // gbBotnes
             // 
             this.gbBotnes.Controls.Add(this.btnSucursales);
-            this.gbBotnes.Controls.Add(this.btnReporte);
             this.gbBotnes.Controls.Add(this.btnInventario);
-            this.gbBotnes.Location = new System.Drawing.Point(70, 38);
+            this.gbBotnes.Location = new System.Drawing.Point(12, 39);
             this.gbBotnes.Name = "gbBotnes";
-            this.gbBotnes.Size = new System.Drawing.Size(944, 103);
+            this.gbBotnes.Size = new System.Drawing.Size(504, 103);
             this.gbBotnes.TabIndex = 3;
             this.gbBotnes.TabStop = false;
             this.gbBotnes.Text = "Menu";
             // 
             // btnSucursales
             // 
-            this.btnSucursales.Location = new System.Drawing.Point(225, 44);
+            this.btnSucursales.Location = new System.Drawing.Point(202, 44);
             this.btnSucursales.Name = "btnSucursales";
             this.btnSucursales.Size = new System.Drawing.Size(75, 23);
             this.btnSucursales.TabIndex = 2;
@@ -70,18 +71,9 @@ namespace Sistema_X
             this.btnSucursales.UseVisualStyleBackColor = true;
             this.btnSucursales.Click += new System.EventHandler(this.btnSucursales_Click);
             // 
-            // btnReporte
-            // 
-            this.btnReporte.Location = new System.Drawing.Point(413, 44);
-            this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(108, 23);
-            this.btnReporte.TabIndex = 1;
-            this.btnReporte.Text = "Detalle Ventas";
-            this.btnReporte.UseVisualStyleBackColor = true;
-            // 
             // btnInventario
             // 
-            this.btnInventario.Location = new System.Drawing.Point(33, 44);
+            this.btnInventario.Location = new System.Drawing.Point(51, 44);
             this.btnInventario.Name = "btnInventario";
             this.btnInventario.Size = new System.Drawing.Size(75, 23);
             this.btnInventario.TabIndex = 0;
@@ -91,30 +83,20 @@ namespace Sistema_X
             // 
             // gbVenta
             // 
-            this.gbVenta.Controls.Add(this.btnLimpiar);
             this.gbVenta.Controls.Add(this.btnVenta);
             this.gbVenta.Controls.Add(this.dgvVenta);
             this.gbVenta.Controls.Add(this.txtCodigo);
             this.gbVenta.Controls.Add(this.lblCodigo);
-            this.gbVenta.Location = new System.Drawing.Point(70, 160);
+            this.gbVenta.Location = new System.Drawing.Point(12, 161);
             this.gbVenta.Name = "gbVenta";
-            this.gbVenta.Size = new System.Drawing.Size(944, 427);
+            this.gbVenta.Size = new System.Drawing.Size(504, 427);
             this.gbVenta.TabIndex = 2;
             this.gbVenta.TabStop = false;
             this.gbVenta.Text = "Venta";
             // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Location = new System.Drawing.Point(609, 54);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
-            this.btnLimpiar.TabIndex = 3;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            // 
             // btnVenta
             // 
-            this.btnVenta.Location = new System.Drawing.Point(831, 54);
+            this.btnVenta.Location = new System.Drawing.Point(426, 55);
             this.btnVenta.Name = "btnVenta";
             this.btnVenta.Size = new System.Drawing.Size(75, 23);
             this.btnVenta.TabIndex = 1;
@@ -123,10 +105,18 @@ namespace Sistema_X
             // 
             // dgvVenta
             // 
+            this.dgvVenta.AllowUserToAddRows = false;
+            this.dgvVenta.AllowUserToDeleteRows = false;
             this.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVenta.Location = new System.Drawing.Point(6, 84);
+            this.dgvVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Nombre,
+            this.Cantidad,
+            this.Precio});
+            this.dgvVenta.Location = new System.Drawing.Point(9, 84);
             this.dgvVenta.Name = "dgvVenta";
-            this.dgvVenta.Size = new System.Drawing.Size(918, 337);
+            this.dgvVenta.ReadOnly = true;
+            this.dgvVenta.Size = new System.Drawing.Size(488, 337);
             this.dgvVenta.TabIndex = 2;
             // 
             // txtCodigo
@@ -135,6 +125,7 @@ namespace Sistema_X
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(400, 20);
             this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // lblCodigo
             // 
@@ -148,7 +139,7 @@ namespace Sistema_X
             // lblSucursal
             // 
             this.lblSucursal.AutoSize = true;
-            this.lblSucursal.Location = new System.Drawing.Point(729, 9);
+            this.lblSucursal.Location = new System.Drawing.Point(257, 10);
             this.lblSucursal.Name = "lblSucursal";
             this.lblSucursal.Size = new System.Drawing.Size(32, 13);
             this.lblSucursal.TabIndex = 4;
@@ -157,7 +148,7 @@ namespace Sistema_X
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(220, 9);
+            this.label1.Location = new System.Drawing.Point(14, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 5;
@@ -166,7 +157,7 @@ namespace Sistema_X
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(292, 9);
+            this.lblUsuario.Location = new System.Drawing.Point(86, 10);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(52, 13);
             this.lblUsuario.TabIndex = 6;
@@ -175,17 +166,45 @@ namespace Sistema_X
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(636, 9);
+            this.label3.Location = new System.Drawing.Point(164, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Sucursal:";
             // 
+            // Codigo
+            // 
+            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1085, 620);
+            this.ClientSize = new System.Drawing.Size(526, 602);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.label1);
@@ -193,7 +212,9 @@ namespace Sistema_X
             this.Controls.Add(this.gbBotnes);
             this.Controls.Add(this.gbVenta);
             this.Name = "MenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipal";
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.gbBotnes.ResumeLayout(false);
             this.gbVenta.ResumeLayout(false);
             this.gbVenta.PerformLayout();
@@ -207,10 +228,8 @@ namespace Sistema_X
 
         private System.Windows.Forms.GroupBox gbBotnes;
         private System.Windows.Forms.Button btnSucursales;
-        private System.Windows.Forms.Button btnReporte;
         private System.Windows.Forms.Button btnInventario;
         private System.Windows.Forms.GroupBox gbVenta;
-        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnVenta;
         private System.Windows.Forms.DataGridView dgvVenta;
         private System.Windows.Forms.TextBox txtCodigo;
@@ -219,5 +238,9 @@ namespace Sistema_X
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
     }
 }

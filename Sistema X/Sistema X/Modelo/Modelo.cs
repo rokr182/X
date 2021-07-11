@@ -226,5 +226,35 @@ namespace Sistema_X.Modelo
             }
             return ok;
         }
+
+
+        public DataTable buscarProducto( int codigo)
+        {
+            int idSucursal = Sesion.sucursal.idSucursal;
+            DataTable dt = new DataTable();
+            MySqlConnection conexion = Conexion.getConexion();
+            string Consulta = "call buscarProducto (@codigo,@idSucursal); ";
+            MySqlCommand com = new MySqlCommand(Consulta, conexion);
+            com.Parameters.AddWithValue("@idSucursal", idSucursal);
+            com.Parameters.AddWithValue("@codigo", codigo);
+
+            try
+            {
+                conexion.Open();
+                com.Connection = conexion;
+                MySqlDataAdapter adap = new MySqlDataAdapter(com);
+                adap.Fill(dt);
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error >>> " + ex.Message);
+            }
+            finally
+            {
+                conexion.Dispose();
+            }
+            return dt;
+        }
     }
 }

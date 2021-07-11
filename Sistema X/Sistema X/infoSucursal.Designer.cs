@@ -121,6 +121,7 @@ namespace Sistema_X
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label1);
             this.Name = "infoSucursal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "infoSucursal";
             this.ResumeLayout(false);
             this.PerformLayout();

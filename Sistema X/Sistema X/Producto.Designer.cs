@@ -162,6 +162,7 @@ namespace Sistema_X
             this.Controls.Add(this.txtCodigoBarras);
             this.Controls.Add(this.lblCodigo);
             this.Name = "Producto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Producto";
             this.ResumeLayout(false);
             this.PerformLayout();

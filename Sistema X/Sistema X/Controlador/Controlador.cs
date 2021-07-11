@@ -68,6 +68,7 @@ namespace Sistema_X.Controlador
         {
             
             return modelo.Producto(codigo);
+
         }
 
 
@@ -91,6 +92,15 @@ namespace Sistema_X.Controlador
         {
             return modelo.InsertarOActualizarSucursal(datosSucursal);
         }
+
+
+        public DataTable buscarProducto(int codigo)
+        {
+            return modelo.buscarProducto(codigo);
+            
+        }
+
+
 
     }
 }

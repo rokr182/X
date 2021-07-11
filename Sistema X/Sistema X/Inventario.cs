@@ -16,6 +16,7 @@ namespace Sistema_X
         public Inventario()
         {
             InitializeComponent();
+            
             Acomodar();
 
         }
@@ -23,6 +24,7 @@ namespace Sistema_X
         private void dgvInventario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Controlador.Controlador ctrl = new Controlador.Controlador();
+
             int CodgioBarra = Convert.ToInt32(dgvInventario.CurrentRow.Cells[0].Value.ToString());
             Producto prd = new Producto(ctrl.datosProducto(CodgioBarra));
             prd.ShowDialog();
@@ -46,6 +48,23 @@ namespace Sistema_X
             Producto prd = new Producto(inventario);
             prd.ShowDialog();
             Acomodar();
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            int codigo;
+            
+            if (txtCodigo.Text != "")
+            {
+                codigo= Convert.ToInt32(txtCodigo.Text);
+                Controlador.Controlador ctrl = new Controlador.Controlador();
+                dgvInventario.DataSource = ctrl.buscarProducto(codigo);
+
+                
+                
+
+            }
+            else { Acomodar(); }
         }
     }
 }
